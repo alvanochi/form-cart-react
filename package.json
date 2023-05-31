@@ -3,8 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://alvanochi.github.io/form-cart-react",
   "scripts": {
     "dev": "vite",
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d deploy",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -19,6 +25,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.1",
     "vite": "^4.2.0"

@@ -1,0 +1,34 @@
+{
+  "menu": [
+    {
+      "image": "./public/images/shoes1.jpg",
+      "title": "Nike Air Max",
+      "price": "Rp 3.500.000",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ullam culpa officiis tempore autem consequuntur aliquam magni reprehenderit quisquam inventore!"
+    },
+    {
+      "image": "./public/images/shoes2.jpg",
+      "title": "Nike Air Max",
+      "price": "Rp 5.200.000",
+      "desc": "Lorem ipsum dolor situllam culpa officiis tempore autem consequuntur aliquam magni reprehenderit quisquam inventore!"
+    },
+    {
+      "image": "./public/images/shoes2.jpg",
+      "title": "Nike Air Max",
+      "price": "Rp 5.200.000",
+      "desc": "Lorem ipisicing elit. Numquam ullam culpa officiis tempore autem consequuntur aliquam magni reprehenderit quisquam inventore!"
+    },
+    {
+      "image": "./public/images/shoes2.jpg",
+      "title": "Nike Air Max",
+      "price": "Rp 5.200.000",
+      "desc": "culpa officiis tempore autem consequuntur aliquam magni reprehenderit quisquam inventore!"
+    },
+    {
+      "image": "./public/images/shoes2.jpg",
+      "title": "Nike Air Max",
+      "price": "Rp 5.200.000",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ullam culpa officiis tempore autem consequuntur aliquam magni reprehenderit quisquam inventore!"
+    }
+  ]
+}

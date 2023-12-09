@@ -1,16 +1,28 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { DarkMode } from "../../../context/DarkMode";
 
-const AuthLayout = (props) => {
-  const { children, title, type } = props;
+const AuthLayout = ({ children, title, type }) => {
+  const { isDarkMode, setIsDarkMode } = useContext(DarkMode);
   return (
-    <div className="flex justify-center min-h-screen items-center">
+    <div
+      className={`flex justify-center min-h-screen items-center ${
+        isDarkMode && "bg-slate-900"
+      }`}
+    >
       <div className="w-full max-w-xs">
-        <div className="text-blue-600 font-bold mb-2 text-3xl">{title}</div>
-        <p className="font-medium text-slate-500 mb-5">
+        <button
+          className="absolute p-2 font-semibold text-white bg-blue-600 rounded-md top-2 right-2"
+          onClick={() => setIsDarkMode(!isDarkMode)}
+        >
+          {isDarkMode ? "Light" : "Dark"}
+        </button>
+        <div className="mb-2 text-3xl font-bold text-blue-600">{title}</div>
+        <p className="mb-5 font-medium text-slate-500">
           Welcome back, Please enter your details!
         </p>
         {children}
-        <p className="text-sm text-center">
+        <p className={`text-sm text-center ${isDarkMode && "text-white"} `}>
           {type === "login"
             ? "Don't have an account? "
             : "Already have an account? "}

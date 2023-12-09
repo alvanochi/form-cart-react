@@ -1,35 +1,48 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../Button";
 import InputForm from "../Input";
+import login from "../../../services/login";
 
 const FormLogin = () => {
+  const [loginFailed, setLoginFailed] = useState("");
   const LoginHandler = (e) => {
-    localStorage.setItem("Email", e.target.email.value);
-    localStorage.setItem("Password", e.target.password.value);
     e.preventDefault();
-    window.location.href = "/products";
+    const data = {
+      username: e.target.username.value,
+      password: e.target.password.value,
+    };
+    login(data, (status, res) => {
+      if (status) {
+        localStorage.setItem("Token", res.token);
+        window.location.href = "/products";
+      } else {
+        setLoginFailed(res.response.data);
+      }
+    });
+
+    // window.location.href = "/products";
   };
-  const emailRef = useRef(null);
+  const userRef = useRef(null);
   useEffect(() => {
-    emailRef.current.focus();
+    userRef.current.focus();
   }, []);
 
   return (
     <>
       <form onSubmit={LoginHandler}>
         <InputForm
-          For="email"
-          label="Email"
-          type="email"
-          placeholder="email@example.com"
-          name="email"
-          ref={emailRef}
+          For="username"
+          label="Username"
+          type="text"
+          placeholder="johnd"
+          name="username"
+          ref={userRef}
         />
         <InputForm
           For="password"
           label="Password"
           type="password"
-          placeholder="*******"
+          placeholder="m38rmF$"
           name="password"
         />
         <Button
@@ -39,6 +52,9 @@ const FormLogin = () => {
         >
           Login
         </Button>
+        {loginFailed && (
+          <p className="mb-2 text-center text-red-500">{loginFailed}</p>
+        )}
       </form>
     </>
   );

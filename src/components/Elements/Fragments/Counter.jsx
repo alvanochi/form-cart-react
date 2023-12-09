@@ -52,11 +52,19 @@ import { useEffect, useRef, useState } from "react";
 const Counter = () => {
   const [count, setCount] = useState(1);
   const buttonRef = useRef(null);
+  const btnRef = useRef(null);
   useEffect(() => {
     count > 1
       ? (buttonRef.current.style.display = "block")
       : (buttonRef.current.style.display = "none");
   });
+
+  useEffect(() => {
+    btnRef.current = count;
+    if (btnRef.current === 10) {
+      setCount(1);
+    }
+  }, [count]);
 
   return (
     <div className="flex items-center justify-center py-3">

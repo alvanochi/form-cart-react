@@ -5,7 +5,7 @@ import InputForm from "../Input";
 const FormRegister = () => {
   const RegistHandler = (e) => {
     e.preventDefault();
-    localStorage.setItem("Full Name", e.target.fullName.value);
+    localStorage.setItem("Username", e.target.username.value);
     window.location.href = "/";
   };
   const nameRef = useRef(null);
@@ -16,11 +16,11 @@ const FormRegister = () => {
     <>
       <form onSubmit={RegistHandler}>
         <InputForm
-          For="fullName"
-          label="Full Name"
+          For="username"
+          label="Username"
           type="text"
-          placeholder="Insert your name here...."
-          name="fullName"
+          placeholder="Insert your username here...."
+          name="username"
           ref={nameRef}
         />
         <InputForm
